@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="title">ToDo List</h1>
+    </header>
+    <main>
+      <div class="book">
+        <div class="book__header">
+          <input type="text" class="book__input" />
+          <button class="book__add">Добавить</button>
+        </div>
+        <ul class="list">
+          <li class="list__item">
+            <input type="checkbox" class="list__checkbox" />
+            <p class="list__text">
+              Сделать удаление каждого элемента по крестику справа
+            </p>
+            <button class="list__button">❌</button>
+          </li>
+          <li class="list__item">
+            <input type="checkbox" class="list__checkbox" />
+            <p class="list__text">
+              Сделать удаление каждого элемента по крестику справа
+            </p>
+            <button class="list__button">❌</button>
+          </li>
+          <li class="list__item">
+            <input type="checkbox" class="list__checkbox" />
+            <p class="list__text__checked list__text">
+              Сделать удаление каждого элемента по крестику справа
+            </p>
+            <button class="list__button">❌</button>
+          </li>
+        </ul>
+        <div class="book__footer">
+          <button class="book__deleteReady">Удалить завершенные</button>
+          <button class="book__deleteAll book__deleteReady">Удалить все</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
