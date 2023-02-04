@@ -1,7 +1,7 @@
 const ul = document.querySelector("ul");
 const input = document.querySelector("input");
 const addButton = document.querySelector(".book__add");
-const listDeleteButton = document.querySelector(".list__button");
+const allDeleteButton = document.querySelector(".book__deleteAll");
 const noteData = [];
 
 function addNoteToData() {
@@ -26,6 +26,7 @@ function createNote() {
   const listDeleteButton = document.getElementById(deleteId);
   listDeleteButton.addEventListener("click", function deleteNote() {
     ul.removeChild(noteItem);
+    noteData.splice(noteId, 1);
   });
   const listCheck = document.getElementById(checkboxId);
   listCheck.addEventListener("click", function checkedNote() {
@@ -39,4 +40,13 @@ function createNote() {
   });
 }
 
+function allDelete() {
+  const liList = document.querySelector(".list__item");
+  for (let k = noteData.length; k > 0; k - 1) {
+    ul.removeChild(liList);
+    noteData.splice(noteId, 1);
+  }
+}
+
+allDeleteButton.addEventListener("click", allDelete);
 addButton.addEventListener("click", addNoteToData);
