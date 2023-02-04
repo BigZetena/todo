@@ -14,7 +14,9 @@ button {
 
 .book {
   width: 594px;
-  height: 386px;
+  max-height: -webkit-max-content;
+  max-height: -moz-max-content;
+  max-height: max-content;
   box-shadow: 0px 8px 35px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
   margin: 0 auto;
