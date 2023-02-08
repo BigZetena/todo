@@ -1,9 +1,19 @@
 const ul = document.querySelector("ul");
+const form = document.querySelector(".book__header");
 const input = document.querySelector("input");
 const addButton = document.querySelector(".book__add");
 const allDeleteButton = document.querySelector(".book__deleteAll");
 const checkedDeleteButton = document.querySelector(".book__deleteReady");
+const bookFooter = document.querySelector(".book__footer");
 let noteData = [];
+
+function hideFooter() {
+  noteData.length == 0
+    ? (bookFooter.style.display = "none")
+    : (bookFooter.style.display = "");
+}
+
+hideFooter();
 
 function addNoteToData() {
   if (input.value.trim().length) {
@@ -17,6 +27,8 @@ function addNoteToData() {
     ];
     createNote(noteData);
     drawTodos(noteData);
+    input.value = "";
+    input.focus();
   }
 }
 
@@ -65,6 +77,7 @@ function drawTodos(data) {
   data.forEach((item) => {
     ul.append(createNote(item));
   });
+  hideFooter();
 }
 
 function deleteAll() {
@@ -77,7 +90,10 @@ function deleteChecked() {
   drawTodos(noteData);
 }
 
-addButton.addEventListener("click", addNoteToData);
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  addNoteToData();
+});
 
 allDeleteButton.addEventListener("click", deleteAll);
 
